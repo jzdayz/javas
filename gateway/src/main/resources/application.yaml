@@ -1,0 +1,20 @@
+server:
+  port: 9021
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://localhost:9001/eureka/
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: all
+          uri: lb://appGroup
+          predicates:
+            - Path=/**
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true

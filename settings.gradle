@@ -1,0 +1,6 @@
+rootProject.name = 'javas'
+include('eureka')
+include('app1')
+include('app2')
+include('gateway')
+
